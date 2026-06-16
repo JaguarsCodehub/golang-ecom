@@ -3,6 +3,8 @@ package user
 import (
 	"net/http"
 
+	"github.com/JaguarsCodehub/golang-ecom/types"
+	"github.com/JaguarsCodehub/golang-ecom/utils"
 	"github.com/gorilla/mux"
 )
 
@@ -24,6 +26,10 @@ func (h *Handler) handleLogin(w http.ResponseWriter, r *http.Request) {
 
 func (h *Handler) handleRegister(w http.ResponseWriter, r *http.Request) {
 	// get JSON payload
+	var payload types.RegisterUserPayload
+	if err := utils.ParseJSON(r.Body, payload); err != nil {
+
+	}
 	// check if the user exists
 	// if it does not we create the new user
 }
